@@ -2,6 +2,9 @@
 **/__pycache__
 **/venv
 
+# React node modules
+/node_modules
+
 # Logs
 logs
 *.log
