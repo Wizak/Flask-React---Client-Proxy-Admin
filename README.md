@@ -27,6 +27,3 @@ http://127.0.0.1:3000
 ```
 Admin side show each message about visitors
 ```
----
-## How to use
-```
