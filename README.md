@@ -1,7 +1,6 @@
 # Flask-React---Client-Proxy-Admin
 ---
-### Client visits web page - visitors data (user id and page endpoint) sends to proxy server - by web sockets data receive to admin side.
-Used to be Docker Compose, React Admin, Socket.io, Flask
+### Client visits web page - visitors data (user id and page endpoint) sends to proxy server - by web sockets data receive to admin side. Used to be Docker Compose, React Admin, Socket.io, Flask
 ---
 ## Client-Server
 ```
@@ -27,4 +26,7 @@ http://127.0.0.1:3000
 ```
 ```
 Admin side show each message about visitors
+```
+---
+## How to use
 ```
