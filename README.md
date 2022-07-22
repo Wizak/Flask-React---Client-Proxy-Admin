@@ -1,10 +1,8 @@
 # Flask-React-Client-Proxy-Admin
 ---
-### Client visits web page - visitors data (user id and page endpoint) sends to proxy server - data receive to admin side by web sockets. Was used Docker Compose, React Admin, Socket.io, Flask
----
 ## Client-Server
 ```
-http://127.0.0.1:5001
+http://localhost:5001
 ```
 ```
 Visitng web site pages. Data of current user is saved in cookies. 
@@ -13,7 +11,7 @@ Each visited page means that client sends on proxy (Flask) data={'end_user_id': 
 ---
 ## Proxy-Server
 ```
-http://127.0.0.1:6001
+http://localhost:6001
 ```
 ```
 Server waits for data from post request using REST API.
@@ -22,14 +20,18 @@ After post data on the server - with open connection data receive to admin side.
 ---
 ## Admin-Server
 ```
-http://127.0.0.1:3000
+http://localhost:3000
 ```
 ```
 Admin side shows each info message about visitors.
 ```
 ---
-## Start compose
+## Begin with Docker
 ```
 docker-compose build
 docker-compose up
 ```
+```
+Use this commands for run compose of containers and check solutions.
+```
+
