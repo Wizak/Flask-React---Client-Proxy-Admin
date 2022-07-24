@@ -1,41 +1,37 @@
-import React, { useState, useEffect } from "react";
-import io from "socket.io-client";
+import './App.css'
+import React from 'react';
+import { useState, useEffect } from "react";
+import io from 'socket.io-client';
 
 const socket = io.connect("http://127.0.0.1:6001");
 
 function App() {
-  const [messages, setMessages] = useState([""]);
-
+  const [messages, setMessages] = useState([]);
+  
   useEffect(() => {
-    getMessages();
+      getMessages();
   }, [messages.length]);
-
+  
   const getMessages = () => {
-    socket.on("receive_id", msg => {
-      //   let allMessages = messages;
-      //   allMessages.push(msg);
-      //   setMessages(allMessages);
-      // console.log(msg.end_user_id)
-      setMessages([...messages, msg]);
-    });
-    socket.on("receive_url", msg => {
-      //   let allMessages = messages;
-      //   allMessages.push(msg);
-      //   setMessages(allMessages);
-      // console.log(msg.end_user_id)
+    socket.on("receive_message", msg => {
       setMessages([...messages, msg]);
     });
   };
 
   return (
-    <div>
-      {messages.length > 0 &&
-        messages.map(msg => (
-          <div>
-            <br></br>
-            {msg}
+    <div className='container'>
+      <div className='header'>
+        <h1>end_user_id</h1>
+        <h1>wep_page_url</h1>
+      </div>
+      <div className='body'>
+      {messages.length > 0 && messages.map(msg => (
+          <div className='body-items'>
+            <p>{msg.end_user_id}</p>
+            <p>{msg.web_page_url}</p>
           </div>
         ))}
+      </div>
     </div>
   );
 };
