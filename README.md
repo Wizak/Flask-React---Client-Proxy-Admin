@@ -30,6 +30,7 @@ Admin side shows each info message about visitors.
 ```
 Build images
 ```
+```
 docker compose build
 ```
 ```
