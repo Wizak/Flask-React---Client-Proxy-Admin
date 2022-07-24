@@ -2,7 +2,7 @@
 ---
 ## Client-Server
 ```
-http://localhost:5001
+http://127.0.0.1:5001
 ```
 ```
 Visitng web site pages. Data of current user is saved in cookies. 
@@ -11,7 +11,7 @@ Each visited page means that client sends on proxy (Flask) data={'end_user_id': 
 ---
 ## Proxy-Server
 ```
-http://localhost:6001
+http://127.0.0.1:6001
 ```
 ```
 Server waits for data from post request using REST API.
@@ -28,7 +28,14 @@ Admin side shows each info message about visitors.
 ---
 ## Begin with Docker
 ```
-docker-compose build
+Build images
+```
+docker compose build
+```
+```
+Build images, run containers and start
+```
+```
 docker-compose up
 ```
 ```
