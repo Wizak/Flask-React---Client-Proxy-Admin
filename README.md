@@ -27,19 +27,13 @@ Admin side shows each info message about visitors.
 ```
 ---
 ## Begin with Docker
-```
 Build images
-```
 ```
 docker compose build
 ```
-```
 Build images, run containers and start
 ```
-```
-docker-compose up
-```
+docker compose up
 ```
 Use this commands for run compose of containers and check solutions.
-```
 
