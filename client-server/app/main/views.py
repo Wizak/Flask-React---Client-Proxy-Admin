@@ -26,8 +26,5 @@ def register():
     return render_template('register.html')
 
 
-@main_bp.errorhandler(404) 
-def invalid_route(e): 
-    return render_template('error404.html')
-
-
+def page_error(e):
+        return render_template('error404.html'), 404

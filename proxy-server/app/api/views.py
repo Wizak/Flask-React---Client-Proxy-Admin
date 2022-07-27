@@ -5,6 +5,9 @@ from flask_restful import Resource
 
 from . import api_api
 from app import socket_io
+from app.models import DataBase
+
+from datetime import datetime
 
 
 @api_api.resource('/receiver')
@@ -15,7 +18,8 @@ class StateData(Resource):
         if token == config_token:
             data = request.get_json()
             if 'end_user_id' in data and 'web_page_url' in data:
-                socket_io.emit('receive_message', data, broadcast=True)
+                now = datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+                DataBase.set_data({**data, 'date': now})
                 return jsonify(data)
             return {'msg': 'invalid data'}, 412
         return {'msg': 'invalid token'}, 401
