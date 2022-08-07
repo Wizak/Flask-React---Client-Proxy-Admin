@@ -5,12 +5,13 @@ WORKDIR /proxy-app
 
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
 
 COPY requirements.txt /proxy-app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 6001
+EXPOSE 8080
 
 ENTRYPOINT [ "flask" ]
-CMD ["run", "--host=0.0.0.0", "--port=6001"]
+CMD ["run", "--host=0.0.0.0", "--port=8080"]

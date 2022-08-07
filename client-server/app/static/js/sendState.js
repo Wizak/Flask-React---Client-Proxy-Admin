@@ -24,7 +24,7 @@ function setCookie() {
 }
 
 function RespData(data) {
-    fetch("http://127.0.0.1:6001/api/v1/receiver?token=Q6A3hpmZt7", {
+    fetch("http://localhost:8080/api/v1/receiver?token=Q6A3hpmZt7", {
         method: 'POST', 
         headers: {
             'Content-type': 'application/json',

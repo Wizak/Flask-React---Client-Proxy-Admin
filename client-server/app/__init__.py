@@ -2,12 +2,12 @@ from flask import Flask
 from flask import render_template
 from flask_cors import CORS
 
-from app.config import Develop
+from app.config import Config
 
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object(Develop)
+    app.config.from_object(Config)
     
     CORS(app, resources={r"/*":{"origins":"*"}})
 

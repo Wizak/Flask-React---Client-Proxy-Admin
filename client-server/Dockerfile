@@ -5,12 +5,13 @@ WORKDIR /client-app
 
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=development
+ENV FLASK_DEBUG=1
 
 COPY requirements.txt /client-app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 5001
+EXPOSE 80
 
 ENTRYPOINT [ "flask" ]
-CMD ["run", "--host=0.0.0.0", "--port=5001"]
+CMD ["run", "--host=0.0.0.0", "--port=80"]

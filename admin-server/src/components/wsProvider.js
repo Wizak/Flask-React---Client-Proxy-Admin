@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-const socket = io.connect("http://127.0.0.1:6001");
+const socket = io.connect("http://localhost:8080/");
 
 export default (action, collection, payload = {})=> 
 new Promise((resolve, reject)=> {
